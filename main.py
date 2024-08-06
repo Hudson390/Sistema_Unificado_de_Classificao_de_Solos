@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import time
 
 # Função para classificar o solo
 def classificar_solo(peneira_4200, fracao_grossa, porcentagem_areia, porcentagem_finos, carta_plasticidade=None, Cu=None, Cc=None, IP=None, LL=None):
@@ -54,6 +55,7 @@ def obter_dados_usuario():
             classificacao = classificar_solo(peneira_4200, fracao_grossa, porcentagem_areia, porcentagem_finos, Cu=Cu, Cc=Cc)
 
         print("Classificação do solo:", classificacao)
+        time.sleep(20)
 
     except ValueError as e:
         print("Erro: %s" % e)
