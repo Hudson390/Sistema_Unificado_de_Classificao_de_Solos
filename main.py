@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 
 # Função para classificar o solo
 def classificar_solo(peneira_200, peneira_04, ll, ip):
@@ -38,18 +39,39 @@ def classificar_solo(peneira_200, peneira_04, ll, ip):
 
 # Função para obter dados do usuário e classificar o solo
 def obter_dados_usuario():
-    try:
-        peneira_200 = float(input("Percentual que passa na peneira 200: "))
-        peneira_04 = float(input("Percentual que passa na peneira 4: "))
-        ll = float(input("Limite de liquidez: "))
-        ip = float(input("Índice de plasticidade: "))
+    while True:
+        try:
+            peneira_200 = float(input("Percentual que passa na peneira 200: "))
+            peneira_04 = float(input("Percentual que passa na peneira 4: "))
+            ll = float(input("Limite de liquidez: "))
+            ip = float(input("Índice de plasticidade: "))
 
-        classificacao = classificar_solo(peneira_200, peneira_04, ll, ip)
+            classificacao = classificar_solo(peneira_200, peneira_04, ll, ip)
 
-        print(classificacao)
-        
-    except ValueError as e:
-        print("Erro: %s" % e)
+            print("\nClassificação do Solo:")
+            print(classificacao)
+            
+        except ValueError as e:
+            print("Erro: %s" % e)
+
+        # Pergunta ao usuário se ele deseja continuar ou sair
+        print("\nDeseja continuar ou sair?")
+        print("1. Continuar")
+        print("2. Sair")
+        escolha = input("Escolha uma opção: ")
+
+        if escolha == '2':
+            print("Saindo da aplicação...")
+            break
+        elif escolha == '1':
+            limpar_terminal()
+            continue
+        else:
+            print("Opção inválida. Tente novamente.")
+
+def limpar_terminal():
+    os.system('cls')
 
 # Chama a função para obter dados do usuário e classificar o solo
-obter_dados_usuario()
+if __name__ == "__main__":
+    obter_dados_usuario()
