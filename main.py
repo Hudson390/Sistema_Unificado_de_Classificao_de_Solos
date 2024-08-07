@@ -8,18 +8,61 @@ def classificar_solo(peneira_200, peneira_04, ll, ip):
 
     if peneira_200 <= 50:
         resultado.append("Solo Grosso")
-        if peneira_04 >= 50:
-            resultado.append("Areia")
-            if ip > ipa:
-                resultado.append(f"{ipa:.2f} está acima da linha A, logo o solo é Areia Argiloso")
+        
+        if peneira_200 > 12:
+            if peneira_04 >= 50:
+                if ip > ipa:
+                    resultado.append(f"{ipa:.2f} está acima da linha A, logo o solo é Areia Argiloso")
+                else:
+                    resultado.append(f"{ipa:.2f} está abaixo da linha A, logo o solo é Areia Siltoso")
             else:
-                resultado.append(f"{ipa:.2f} está abaixo da linha A, logo o solo é Areia Siltoso")
+                resultado.append("Pedregulho")
+                if ip > ipa:
+                    resultado.append(f"{ipa:.2f} está acima da linha A, logo o solo é Pedregulho Argiloso")
+                else:
+                    resultado.append(f"{ipa:.2f} está abaixo da linha A, logo o solo é Pedregulho Siltoso")
+        elif peneira_200 < 5:
+            cc = float(input("Índice de CC: "))
+            cu = float(input("Índice de CU: "))
+
+            if peneira_04 >= 50:
+                if cu >= 4 and 1<=cc<=3:
+                    resultado.append("Areia bem graduado")
+                else:
+                    resultado.append("Areia mal graduado")
+            else:
+                if cu >= 4 and 1<=cc<=3:
+                    resultado.append("Pedregulho bem graduado")
+                else:
+                    resultado.append("Pedregulho mal graduado")  
+
         else:
-            resultado.append("Pedregulho")
-            if ip > ipa:
-                resultado.append(f"{ipa:.2f} está acima da linha A, logo o solo é Pedregulho Argiloso")
+            cc = float(input("Índice de CC: "))
+            cu = float(input("Índice de CU: "))
+
+            if peneira_04 >= 50:
+                if ip > ipa:
+                    resultado.append(f"{ipa:.2f} está acima da linha A, logo o solo é Areia Argiloso")
+                else:
+                    resultado.append(f"{ipa:.2f} está abaixo da linha A, logo o solo é Areia Siltoso")
             else:
-                resultado.append(f"{ipa:.2f} está abaixo da linha A, logo o solo é Pedregulho Siltoso")
+                resultado.append("Pedregulho")
+                if ip > ipa:
+                    resultado.append(f"{ipa:.2f} está acima da linha A, logo o solo é Pedregulho Argiloso")
+                else:
+                    resultado.append(f"{ipa:.2f} está abaixo da linha A, logo o solo é Pedregulho Siltoso")
+
+            if peneira_04 >= 50:
+                if cu >= 4 and 1<=cc<=3:
+                    resultado.append("Areia bem graduado")
+                else:
+                    resultado.append("Areia mal graduado")
+            else:
+                if cu >= 4 and 1<=cc<=3:
+                    resultado.append("Pedregulho bem graduado")
+                else:
+                    resultado.append("Pedregulho mal graduado") 
+            
     else:
         resultado.append("Solo Fino")
         if ll >= 50:
