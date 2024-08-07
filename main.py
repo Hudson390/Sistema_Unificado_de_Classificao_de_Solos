@@ -6,7 +6,7 @@ def classificar_solo(peneira_200, peneira_04, ll, ip):
     ipa = 0.73 * (ll - 20)
     resultado = []
 
-    if peneira_200 <= 50:
+    if peneira_200 < 50:
         resultado.append("Solo Grosso")
         
         if peneira_200 > 12:
