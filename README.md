@@ -53,4 +53,4 @@ Areia Argilosa
     <p>Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request ou abrir uma Issue para quaisquer melhorias ou correções de bugs.</p>
 
   <h2>Contato</h2>
-    <p>Para qualquer dúvida ou sugestão, sinta-se à vontade para entrar em contato por e-mail: <a href="mailto:hudsoncdiniz@gmail.com">seu.email@exemplo.com</a>.</p>
+    <p>Para qualquer dúvida ou sugestão, sinta-se à vontade para entrar em contato por e-mail: <a href="mailto:hudsoncdiniz@gmail.com">hudsoncdiniz@gmail.com</a>.</p>
